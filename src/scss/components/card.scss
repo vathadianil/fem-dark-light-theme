@@ -1,0 +1,34 @@
+@use "../util" as *;
+
+.card {
+  &__icon {
+    &--facebook {
+    }
+    &--twitter {
+    }
+    &--instagram {
+    }
+    &--youtube {
+    }
+  }
+
+  &__username {
+  }
+
+  &__count {
+    &--big {
+    }
+    &--small {
+    }
+  }
+
+  &__label {
+  }
+
+  &__change {
+    &--up {
+    }
+    &--down {
+    }
+  }
+}
