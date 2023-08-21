@@ -40,16 +40,11 @@ function Toggle() {
 
   useEffect(() => {
     const mediaQueryList = window.matchMedia("(prefers-color-scheme: dark)"); // Getting the media query object from window
-
+    mediaQueryList.matches ? setTheme("dark") : setTheme("light");
     const changeTheme = (evt: any) => {
       setTheme(evt.matches ? "dark" : "light");
     };
-
-    if (!getModeFromLocalStorage()) {
-      mediaQueryList.matches ? setTheme("dark") : setTheme("light");
-      mediaQueryList.addEventListener("change", changeTheme, false);
-    }
-
+    mediaQueryList.addEventListener("change", changeTheme, false);
     return () => {
       mediaQueryList.removeEventListener("change", changeTheme, false);
       localStorage.removeItem("theme");
