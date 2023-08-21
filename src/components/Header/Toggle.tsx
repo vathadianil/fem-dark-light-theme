@@ -34,7 +34,6 @@ function Toggle() {
     mediaQueryList.matches ? setTheme("dark") : setTheme("light");
 
     const changeTheme = (evt: any) => {
-      console.log(evt);
       setTheme(evt.matches ? "dark" : "light");
     };
 
