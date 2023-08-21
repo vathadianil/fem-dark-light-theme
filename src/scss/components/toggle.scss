@@ -1,42 +1,42 @@
 @use "../util" as *;
 .toggle {
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: 1fr toRem(48) 1fr;
-  gap: toRem(4.8) toRem(8);
+  // grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 1fr toRem(48);
+  gap: toRem(13);
   margin: 0;
   border: none;
 
   label {
     font-size: toRem(14);
     font-weight: 700;
+    color: var(--toggle);
     align-self: center;
     &[for="dark"] {
       grid-column: 1 / 2;
-      justify-self: end;
     }
-    &[for="system"] {
-      grid-row: 2 / 3;
-      grid-column: 1 / 4;
-      justify-self: center;
-      align-self: flex-start;
-    }
-    &[for="light"] {
-      grid-column: 3 / 4;
-    }
+    // &[for="system"] {
+    //   grid-row: 2 / 3;
+    //   grid-column: 1 / 4;
+    //   justify-self: center;
+    //   align-self: flex-start;
+    // }
+    // &[for="light"] {
+    //   grid-column: 3 / 4;
+    // }
   }
 
   &__wrapper {
     position: relative;
     height: toRem(24);
-    grid-row: 1 / 2;
+    // grid-row: 1 / 2;
     grid-column: 2 / 3;
   }
 
   input[type="radio"] {
     opacity: 0;
-    margin: 0 toRem(-2);
-    width: toRem(20);
+    margin: 0;
+    width: toRem(24);
     height: toRem(24);
 
     &:focus ~ .toggle__button {
@@ -50,11 +50,7 @@
     top: 0;
     height: 100%;
     width: 100%;
-    background: linear-gradient(
-      225deg,
-      var(--toggle-bg-end) 0%,
-      var(--toggle-bg-start) 98.02%
-    );
+    background: var(--toggle-bg);
     border-radius: toRem(12);
     pointer-events: none;
   }
@@ -66,7 +62,7 @@
     right: 100%;
     width: toRem(18);
     height: toRem(18);
-    background-color: var(--dark-bg);
+    background-color: var(--toggle-button);
     border-radius: 50%;
     transition: all 150ms ease-in-out;
   }
@@ -76,9 +72,9 @@
     right: 3px;
   }
 
-  #system:checked ~ .toggle__button {
-    left: 50%;
-    right: auto;
-    transform: translate(-50%);
-  }
+  // #system:checked ~ .toggle__button {
+  //   left: 50%;
+  //   right: auto;
+  //   transform: translate(-50%);
+  // }
 }
