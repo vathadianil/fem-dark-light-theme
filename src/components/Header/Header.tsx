@@ -8,6 +8,7 @@ function Header() {
         <h1>Social Media Dashboard</h1>
         <span className="header__subtitle">Total Followers: 23,004</span>
       </div>
+      <div className="header__divider"></div>
       <Toggle />
     </React.Fragment>
   );

@@ -7,12 +7,18 @@
     align-items: center;
   }
 
-  // &__title {
-  // }
-
   &__subtitle {
     font-size: toRem(14);
     font-weight: 700;
     color: var(--text-color2);
+  }
+
+  &__divider {
+    width: 100%;
+    border: 1px solid var(--card-bg);
+    margin: toRem(32) 0;
+    @include breakpoint(medium) {
+      display: none;
+    }
   }
 }
